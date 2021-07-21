@@ -1,0 +1,31 @@
+<nav style="background-size:6cm;" class="navbar navbar-expand-lg navbar-light bg-light" >
+  <div style="background-color: #17a2b8;" class="container-fluid">
+    <a class="navbar-brand" style="color:white" href="" routerLink="/home">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="" style="color:white" routerLink="/create-issue">Crear solicitud</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href=""style="color:white" routerLink="/issues">Historial de solicitudes</a>
+        </li>
+
+        <li class="nav-item mr-5">
+          <a class="nav-link mr-5" href=""style="color:white" routerLink="/profile">Perfil</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ml-auto">
+          <a class="ml-auto nav-link" href=""style="color:white" (click)="logout()">Salir</a>
+        </li>
+      </ul>
+      
+
+    </div>
+  </div>
+</nav>
