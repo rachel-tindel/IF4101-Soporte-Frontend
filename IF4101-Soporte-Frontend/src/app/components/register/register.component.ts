@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ClientService } from '../../services/client.service';
 import { Client } from '../../models/client.model';
-
+import { Supporter } from '../../models/supporter.model';
 import { MaterialModule } from '../../material/material.module';
 
 @Component({
@@ -15,23 +15,17 @@ import { MaterialModule } from '../../material/material.module';
 
 export class RegisterComponent implements OnInit {
 
-  newClient:Client=new Client();
+  newSupport:Supporter=new Supporter();
 
   public registerForm = this.fb.group({
     id:0,
     name : ['',[ Validators.required]],
     firstsurname : ['',[ Validators.required]],
     secondsurname : ['',[ Validators.required]],
-
-    address : ['',[ Validators.required]],
     email : ['',[ Validators.required, Validators.email]],
-
-    phone : ['',[ Validators.required, Validators.pattern("^[0-9]{8}$")]],
-    secondcontact : ['',[ Validators.required, Validators.pattern("^[0-9]{8}$")]],
-
     password : ['',[ Validators.required, Validators.minLength(8)]],
 
-    television : false,
+    cable : false,
     mobilephone : false,
     telephone : false,
     internet : false,
@@ -45,37 +39,31 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createUser(){
+ createUser(){
 
-    /*if(!this.serviceValid){
+    if(!this.serviceValid){
       return;
-    }*/
+    }
 
     if(this.registerForm.invalid){
       return;
     }
 
-      this.newClient.name=this.registerForm.get("name").value;
-      this.newClient.firstsurname=this.registerForm.get("firstsurname").value;
-      this.newClient.secondsurname=this.registerForm.get("secondsurname").value;
-      this.newClient.phone=this.registerForm.get("phone").value;
-      this.newClient.secondcontact=this.registerForm.get("secondcontact").value;
-      this.newClient.email=this.registerForm.get("email").value;
-      this.newClient.password=this.registerForm.get("password").value;
-      this.newClient.address=this.registerForm.get("address").value;
+      this.newSupport.nameSupporter=this.registerForm.get("name").value;
+      this.newSupport.firstSurnameSupporter=this.registerForm.get("firstsurname").value;
+      this.newSupport.secondSurnameSupporter=this.registerForm.get("secondsurname").value;
+      this.newSupport.emailSupporter=this.registerForm.get("email").value;
+      this.newSupport.password=this.registerForm.get("password").value;
 
-      this.registerForm.get("television").value ? (this.newClient.television=1) : (this.newClient.television=0);
-      this.registerForm.get("internet").value?this.newClient.internet=1:this.newClient.internet=0;
-      this.registerForm.get("mobilephone").value?this.newClient.mobilephone=1:this.newClient.mobilephone=0;
-      this.registerForm.get("telephone").value?this.newClient.telephone= 1:this.newClient.telephone= 0;
-
-      this.newClient.creationuser=this.newClient.name;
-      this.newClient.creationdate= new Date();
+      this.registerForm.get("cable").value ?this.newSupport.cable=1 :this.newSupport.cable=0;
+      this.registerForm.get("internet").value?this.newSupport.internet=1:this.newSupport.internet=0;
+      this.registerForm.get("mobilephone").value?this.newSupport.mobilephone=1:this.newSupport.mobilephone=0;
+      this.registerForm.get("telephone").value?this.newSupport.telephone= 1:this.newSupport.telephone= 0;
 
 
-    this.clientService.addClient(this.newClient)
+    this.clientService.addSupport(this.newSupport)
     .subscribe( resp =>{
-        this.modal('/login','Registro Exitoso')
+        this.modal('/support-list','Registro Exitoso')
     });
   }
 
@@ -83,9 +71,9 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.get(value).invalid && this.registerForm.get(value).touched
   }
 
-  /*get serviceValid() {
+ get serviceValid() {
 
-    if(this.registerForm.get('television').value){
+    if(this.registerForm.get('cable').value){
       return true;
     }
     if(this.registerForm.get('mobilephone').value){
@@ -98,7 +86,7 @@ export class RegisterComponent implements OnInit {
       return true;
     }
     return false;
-  }*/
+  }
 
   modal( url:string | '', message:String){
     let timerInterval
@@ -120,6 +108,4 @@ export class RegisterComponent implements OnInit {
           }
         })
   }
-
-
 }

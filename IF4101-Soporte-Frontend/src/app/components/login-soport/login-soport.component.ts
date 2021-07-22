@@ -4,20 +4,21 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ClientService } from '../../services/client.service';
 import { Client } from '../../models/client.model';
+import { Supporter } from '../../models/supporter.model';
 import { UpperCasePipe } from '@angular/common';
 import { style } from '@angular/animations';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-soport',
+  templateUrl: './login-soport.component.html',
+  styleUrls: ['./login-soport.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginSoportComponent implements OnInit {
 
   @Input() loginData = { email:'', password:''};
 
 
-  client:Client = new Client();
+  newSupport:Supporter=new Supporter();
 
   public loginForm = this.fb.group({
     email : ['',[ Validators.required, Validators.email]],
@@ -46,13 +47,13 @@ export class LoginComponent implements OnInit {
     }
 
 
-    this.clientService.login(this.loginData.email, this.loginData.password)
-    .subscribe( client =>{
-       if(client)   {
-        this.client = client;
-        this.modal('/register','Help-Desk TeleAtlántico');
+    this.clientService.loginSupport(this.loginData.email, this.loginData.password)
+    .subscribe( newSupport =>{
+       if(newSupport)   {
+        this.newSupport = newSupport;
+        this.modal('/profile','Help-Desk TeleAtlántico');
        }else{
-        this.modal('','Error al autentificar')
+        this.modal('','Error al autentificarse como soportista')
        }
     });
   }
@@ -81,3 +82,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+

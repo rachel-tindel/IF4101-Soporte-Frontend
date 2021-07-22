@@ -6,27 +6,28 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IssueComponent } from './components/issue/issue.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
-import { IssuesComponent } from './components/issues/issues.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
-import { IssueDetailsComponent } from './components/issue-details/issue-details.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SupportListComponent } from './components/support-list/support-list.component';
+import { LoginSoportComponent } from './components/login-soport/login-soport.component';
+import { NavBarSupportComponent } from './components/nav-bar-support/nav-bar-support.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    IssueComponent,
     NavBarComponent,
     HomeComponent,
-    IssuesComponent,
     ProfileComponent,
-    IssueDetailsComponent,
+    SupportListComponent,
+    LoginSoportComponent,
+    NavBarSupportComponent,
   ],
   imports: [
     BrowserModule,
