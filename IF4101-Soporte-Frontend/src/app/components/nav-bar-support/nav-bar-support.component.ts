@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../services/client.service';
+import { Router } from '@angular/router';
+import { Client } from '../../models/client.model';
 
 @Component({
   selector: 'app-nav-bar-support',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarSupportComponent implements OnInit {
 
-  constructor() { }
+  client:Client;
+
+  constructor(private clientService: ClientService, private router:Router) { }
 
   ngOnInit(): void {
+    this.client = this.clientService.client;
+  }
+
+  logout(){
+    this.clientService.logout();
+    this.router.navigate(['/login']);
   }
 
 }
