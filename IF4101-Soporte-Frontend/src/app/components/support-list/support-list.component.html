@@ -1,0 +1,31 @@
+<app-nav-bar></app-nav-bar>
+<div class="response-table card bg-light">
+<h2>Lista de soportistas</h2>
+
+<table class='table' *ngIf="supporters">
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Primer apellido</th>
+    <th>Segundo apellido</th>
+    <th>Email</th>
+    
+  </tr>
+
+</thead>
+<tbody>
+
+  <tr *ngFor="let s of supporters; let i=index;">
+
+    <td>{{ s.idSoporter  }}</td>
+  <td>{{ s.nameSupporter  }}</td>
+    <td>{{ s.firstSurnameSupporter  }}</td>
+    <td>{{ s.secondSurnameSupporter  }}</td>
+    <td> {{s.emailSupporter}}  </td>
+    
+    </tr>
+
+</tbody>
+</table>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client.model';
 import { ClientService } from 'src/app/services/client.service';
-
+import { Supporter } from '../../models/supporter.model';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -9,12 +9,12 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class ProfileComponent implements OnInit {
 
-  client:Client = new Client();
+  supporter:Supporter = new Supporter();
   
-  constructor(  private clientService:ClientService) { }
+  constructor( private clientService:ClientService) { }
 
   ngOnInit(): void {
-    this.client=this.clientService.client;
+    this.supporter=this.clientService.supporter;
   }
 
 }
