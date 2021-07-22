@@ -1,6 +1,4 @@
-# IF4101-Soporte-Frontend
-
-## Repositorio oficial de Teleatlantico (web-app) (Soportista)
+## Repositorio oficial de Teleatlantico (web-app) (Supervisor y Soportista)
 Este es el repositorio ofical de la aplicación web del Teleatlantico. Aquí se encuentra infomación importante sobre la instalación y las funciones de la aplicación. 
 
 Presione [aquí](https://teleatlantico-soportista.vercel.app/login "Teleatlantico") para ingresar nuestro sitio web.
@@ -18,7 +16,11 @@ Presione [aquí](https://teleatlantico-soportista.vercel.app/login "Teleatlantic
 ---
 
 **📌 Funciones:**
-*  
+*  Ingresar a la aplicación como supervisor y soportista
+*  Ver perfil de soportista 
+*  Ver el historial de soportistas
+*  Registrar usuarios de soporte
+*  Salir de la aplicación como supervisor y soportista
 *  
 <br>
 
