@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  base_url: 'https://localhost:44359/api'
-  //base_url:'https://soporte-helpdesk20210721225722.azurewebsites.net/api'
+  //base_url: 'https://localhost:44359/api'
+  base_url:'https://soporte-helpdesk20210721225722.azurewebsites.net/api'
 };
 
 /*
