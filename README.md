@@ -21,7 +21,6 @@ Presione [aquí](https://teleatlantico-soportista.vercel.app/login "Teleatlantic
 *  Ver el historial de soportistas
 *  Registrar usuarios de soporte
 *  Salir de la aplicación como supervisor y soportista
-*  
 <br>
 
 ---
